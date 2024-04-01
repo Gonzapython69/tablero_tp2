@@ -46,10 +46,17 @@ def mover_personaje(tablero, direccion, posicion):
 def juego_tablero():
     while True:
         try:
-            filas = int(input("Ingrese el número de filas del tablero: "))
+            filas = input("Ingrese el número de filas del tablero: ")
+            if not filas.isdigit():
+                raise ValueError("Debe ingresar un número entero positivo.")
+            filas = int(filas)
             if filas <= 0:
                 raise ValueError("El número de filas debe ser positivo.")
-            columnas = int(input("Ingrese el número de columnas del tablero: "))
+            
+            columnas = input("Ingrese el número de columnas del tablero: ")
+            if not columnas.isdigit():
+                raise ValueError("Debe ingresar un número entero positivo.")
+            columnas = int(columnas)
             if columnas <= 0:
                 raise ValueError("El número de columnas debe ser positivo.")
             break
